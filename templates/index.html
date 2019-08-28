@@ -1,0 +1,68 @@
+{%include 'includes/head.html' %}
+<body>
+	<div class="d-flex" id="wrapper">
+		<!-- Sidebar -->
+		<div class="bg-light" id="sidebar-wrapper">
+			<div class="sidebar-heading">
+			<a href='/'>	<img height="50px" src="{{url_for ('static' , filename ='dist/img/ntcca-logo-top.png')}}"> NCTTCA</a>
+			</div>
+			<hr>
+			<div class="list-group list-group-flush">
+
+				<a title = "Query Volume & Capacity Indicators" class="list-group-item list-group-item-action querylist bg-light border-left border-right itemtooltip" href="#" id="volumeQ">
+					<img class="indicatoricon" src="{{url_for ('static' , filename ='dist/img/volume.svg')}}">
+				Volume and Capacity
+				</a>
+                <a title ="Query Transit Time & Delays Indicators" class="list-group-item list-group-item-action querylist bg-light border-left border-right itemtooltip" href="#" id="transitQ">
+					<img class="indicatoricon" src="{{url_for ('static' , filename ='dist/img/hourglass.svg')}}">
+					Transit Time & Delays
+				</a>
+                <a title="Query Rates & Costs Indicators" class="list-group-item list-group-item-action querylist bg-light border-left border-right itemtooltip" href="#" id="ratesQ">
+				<img class="indicatoricon" src="{{url_for ('static' , filename ='dist/img/ratescost.svg')}}">&nbsp;
+					Rates & Costs
+				</a>
+                <a title="Query Efficiency & Productivity Indicators" class="list-group-item list-group-item-action querylist bg-light border-left border-right itemtooltip" href="#" id="efficiencyQ">
+					<img class="indicatoricon" src="{{url_for ('static' , filename ='dist/img/efficiency.svg')}}">
+										Efficiency & Productivity
+				</a>
+                <a title="Query Infrastructure Indicators" class="list-group-item list-group-item-action querylist bg-light border-left border-right itemtooltip" href="#" id="infrastructureQ">
+					<img class="indicatoricon" src="{{url_for ('static' , filename ='dist/img/infrastructure.svg')}}">
+				 Infrastructure
+				</a>
+                <a title="Query Intra-Regional Indicators" class="list-group-item list-group-item-action querylist bg-light border-left border-right itemtooltip" href="#" id="tredQ">
+					<img class="indicatoricon" src="{{url_for ('static' , filename ='dist/img/trade.svg')}}">
+					Intra-Regional Trade
+				</a>
+			</div>
+		</div><!-- /#sidebar-wrapper -->
+		<!-- Page Content -->
+		<div id="page-content-wrapper">
+			<nav class="navbar navbar-expand-lg navbar-light bg-light border-left" id="navbar">
+				<a id="menu-toggle">
+					<i class="fa fa-th-list"></i>
+				</a>
+				<button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarSupportedContent" data-toggle="collapse" type="button">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+						<li class="nav-item">
+							<a style ="color:#fff" class="nav-link" href="#" id="">About Us</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<div class="container-fluid">
+				<div id="mainContent">
+					<div id="mapViewDiv">
+						<div id="loading">
+							<img width ="150px" alt="Loading..." id="loading-image" src="{{url_for ('static' , filename ='dist/img/loader3.gif')}}">
+						</div>
+						<div class="container">
+							<div class="row none" id="queries"></div>
+						</div>
+					</div>
+				</div>
+			</div><!-- /#page-content-wrapper -->
+		</div><!-- /#wrapper -->
+{%include 'includes/scripts.html' %}
